@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Royal Vee Games</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="crown">♛</span><span>ROYAL VEE <b>GAMES</b></span></div>
+  <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+  <nav id="nav"><a href="#home">Home</a><a href="#reels">Reels</a><a href="#results">Results</a><button class="nav-admin" id="adminOpen">Admin Login</button></nav>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy"><p class="eyebrow">WELCOME TO</p><h1>ROYAL VEE<br><span>GAMES</span></h1>
+  <p class="lead">Your place for featured reels, updates and published results.</p>
+  <div class="actions"><a class="primary" href="#reels">Watch Reels</a><a class="secondary" href="#results">View Results</a></div></div>
+  <div class="hero-mark"><div class="ring">♛</div><span>PLAY • WATCH • STAY UPDATED</span></div>
+</section>
+<section class="section" id="reels"><div class="section-head"><div><p class="eyebrow">LATEST UPDATES</p><h2>Featured Reels</h2></div><span class="tag">VIDEO</span></div>
+  <div class="cards">
+    <article class="tile"><div class="tile-art">▶</div><h3>Welcome Reel</h3><p>Add your first video link from the admin panel.</p></article>
+    <article class="tile"><div class="tile-art alt">▶</div><h3>Game Highlights</h3><p>Your latest highlights can appear here.</p></article>
+    <article class="tile"><div class="tile-art third">▶</div><h3>Announcements</h3><p>Share news and community updates.</p></article>
+  </div>
+</section>
+<section class="section results" id="results"><div class="section-head"><div><p class="eyebrow">PUBLISHED UPDATES</p><h2>Results</h2></div><span class="tag">LATEST</span></div>
+  <div class="notice">Results area is ready. An authorized administrator can publish verified, informational updates here.</div>
+  <div class="result-row"><span>Date</span><span>Update</span><span>Status</span></div>
+  <div class="result-row muted"><span>—</span><span>No results published yet</span><span>—</span></div>
+</section>
+<section class="section payment"><div><p class="eyebrow">MEMBERSHIP</p><h2>Subscription information</h2><p>For lawful website membership or content subscriptions only. No betting or wager payments are accepted.</p></div><div class="qr-box"><div class="qr-placeholder">UPI<br>QR</div><small>Add your verified business UPI QR here after setup.</small></div></section>
+</main>
+<footer><span>© <span id="year"></span> Royal Vee Games</span><span>Play responsibly • Follow local laws</span></footer>
+<div class="modal" id="adminModal" aria-hidden="true"><div class="modal-card"><button class="close" id="adminClose">×</button><p class="eyebrow">RESTRICTED AREA</p><h2>Admin Login</h2><p class="small">This is a visual starter only. Secure login must be connected to a backend before publishing.</p>
+<form id="loginForm"><label>Admin email<input type="email" required placeholder="admin@example.com"></label><label>Password<input type="password" required placeholder="Password"></label><button class="primary full" type="submit">Continue</button></form><p id="loginMsg" class="small"></p></div></div>
+<script src="app.js"></script>
+</body></html>
