@@ -1,39 +1,94 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111827">
-  <title>Royal Vee Games</title><link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Royal Vee Games — Play • Win • Enjoy">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Royal Vee Games</title>
+<style>
+:root{--bg:#080808;--panel:#141414;--panel2:#1b1b1b;--gold:#d8ad55;--gold2:#f6d98e;--muted:#aaa;--line:#3a2d16}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#211a0b 0,#090909 48%,#050505 100%);color:#f6f0e4;font:15px system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.wrap{max-width:1040px;margin:auto;padding:18px 16px 90px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 18px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px}.mark{width:52px;height:52px;border:1px solid var(--gold);border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#242016,#070707);box-shadow:0 0 18px #d8ad5522;font-size:24px}.brand h1{font-family:Georgia,serif;color:var(--gold2);font-size:21px;letter-spacing:2px;margin:0}.brand small{color:#b9a77e;letter-spacing:3px;font-size:10px}
+.nav{display:flex;gap:7px;flex-wrap:wrap}.btn{border:1px solid var(--line);border-radius:11px;padding:10px 14px;background:#17130c;color:var(--gold2);font-weight:650}.btn.primary{background:linear-gradient(135deg,#f0d18a,#b47c24);color:#160f04;border:0}.btn.ghost{background:#151515;color:#eee}.btn.danger{color:#ffaaa0;border-color:#66352f}
+.hero{padding:34px 0 24px;text-align:center}.cards{font-size:35px;letter-spacing:8px;filter:drop-shadow(0 4px 10px #c18b3355)}.hero h2{font:clamp(34px,8vw,58px) Georgia,serif;letter-spacing:3px;color:var(--gold2);margin:10px 0 4px;text-shadow:0 3px 22px #b77a2d44}.hero p{color:#c7b98f;letter-spacing:3px;margin:8px 0 20px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.panel{background:linear-gradient(145deg,#191919,#101010);border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:0 8px 28px #0008}.panel h3{color:var(--gold2);margin:0 0 9px}.muted{color:var(--muted)}.price{font:30px Georgia,serif;color:var(--gold2);margin:10px 0}.pill{display:inline-block;border:1px solid #65502b;color:#e5c77e;border-radius:30px;padding:4px 9px;font-size:11px}
+section{margin:18px 0}.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:26px 0 12px}.section-title h2{margin:0;color:var(--gold2);font:24px Georgia,serif}
+input,textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid #4a3a20;background:#0b0b0b;color:#fff;margin:6px 0 12px}textarea{min-height:85px;resize:vertical}.row{display:flex;gap:9px}.row>*{flex:1;min-width:0}.hidden{display:none!important}.post{border-bottom:1px solid #332817;padding:12px 0}.post:last-child{border:0}.post h4{margin:0 0 5px;color:#f1d99c}.notice{padding:12px;border:1px solid #5c4926;background:#211b10;border-radius:12px;color:#e8d29e;font-size:13px;line-height:1.5}
+footer{text-align:center;color:#81765d;font-size:12px;padding:28px 0}.tabs{display:flex;gap:8px;overflow:auto;padding:10px 0}.tabs .btn{white-space:nowrap}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.wrap{padding:12px 12px 80px}.nav .btn{padding:8px 10px;font-size:12px}.hero{padding:24px 0 14px}.row{flex-direction:column;gap:0}}
+</style>
 </head>
 <body>
-<header class="topbar">
-  <div class="brand"><span class="crown">♛</span><span>ROYAL VEE <b>GAMES</b></span></div>
-  <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
-  <nav id="nav"><a href="#home">Home</a><a href="#reels">Reels</a><a href="#results">Results</a><button class="nav-admin" id="adminOpen">Admin Login</button></nav>
+<div class="wrap">
+<header>
+ <div class="brand"><div class="mark">♠♥</div><div><h1>ROYAL VEE</h1><small>GAMES • OFFICIAL</small></div></div>
+ <nav class="nav"><button class="btn ghost" onclick="show('home')">Home</button><button class="btn ghost" onclick="show('account')">Account</button><button class="btn" onclick="show('admin')">Admin</button></nav>
 </header>
-<main>
-<section class="hero" id="home">
-  <div class="hero-copy"><p class="eyebrow">WELCOME TO</p><h1>ROYAL VEE<br><span>GAMES</span></h1>
-  <p class="lead">Your place for featured reels, updates and published results.</p>
-  <div class="actions"><a class="primary" href="#reels">Watch Reels</a><a class="secondary" href="#results">View Results</a></div></div>
-  <div class="hero-mark"><div class="ring">♛</div><span>PLAY • WATCH • STAY UPDATED</span></div>
-</section>
-<section class="section" id="reels"><div class="section-head"><div><p class="eyebrow">LATEST UPDATES</p><h2>Featured Reels</h2></div><span class="tag">VIDEO</span></div>
-  <div class="cards">
-    <article class="tile"><div class="tile-art">▶</div><h3>Welcome Reel</h3><p>Add your first video link from the admin panel.</p></article>
-    <article class="tile"><div class="tile-art alt">▶</div><h3>Game Highlights</h3><p>Your latest highlights can appear here.</p></article>
-    <article class="tile"><div class="tile-art third">▶</div><h3>Announcements</h3><p>Share news and community updates.</p></article>
-  </div>
-</section>
-<section class="section results" id="results"><div class="section-head"><div><p class="eyebrow">PUBLISHED UPDATES</p><h2>Results</h2></div><span class="tag">LATEST</span></div>
-  <div class="notice">Results area is ready. An authorized administrator can publish verified, informational updates here.</div>
-  <div class="result-row"><span>Date</span><span>Update</span><span>Status</span></div>
-  <div class="result-row muted"><span>—</span><span>No results published yet</span><span>—</span></div>
-</section>
-<section class="section payment"><div><p class="eyebrow">MEMBERSHIP</p><h2>Subscription information</h2><p>For lawful website membership or content subscriptions only. No betting or wager payments are accepted.</p></div><div class="qr-box"><div class="qr-placeholder">UPI<br>QR</div><small>Add your verified business UPI QR here after setup.</small></div></section>
+<main id="home">
+ <div class="hero"><div class="cards">♠ ♥ ♣ ♦</div><h2>ROYAL VEE GAMES</h2><p>PLAY • WIN • ENJOY</p><button class="btn primary" onclick="show('plans')">Explore Membership</button></div>
+ <div class="notice">Welcome to Royal Vee Games. This version is an entertainment and members-content demo. It does not offer cash wagering, betting, or cash prizes.</div>
+ <div class="section-title"><h2>Membership Plans</h2><span class="pill">30 DAYS VALIDITY</span></div>
+ <div class="grid" id="plans">
+  <article class="panel"><span class="pill">SILVER</span><div class="price">₹1,500</div><p class="muted">30-day access to member posts and updates.</p><button class="btn primary" onclick="choosePlan('Silver',1500)">Choose Silver</button></article>
+  <article class="panel"><span class="pill">GOLD</span><div class="price">₹2,000</div><p class="muted">30-day access to member posts and updates.</p><button class="btn primary" onclick="choosePlan('Gold',2000)">Choose Gold</button></article>
+  <article class="panel"><span class="pill">DIAMOND</span><div class="price">₹2,500</div><p class="muted">30-day access to member posts and updates.</p><button class="btn primary" onclick="choosePlan('Diamond',2500)">Choose Diamond</button></article>
+ </div>
+ <div class="section-title"><h2>Latest Updates</h2></div><div class="panel" id="publicPosts"><p class="muted">No updates posted yet.</p></div>
 </main>
-<footer><span>© <span id="year"></span> Royal Vee Games</span><span>Play responsibly • Follow local laws</span></footer>
-<div class="modal" id="adminModal" aria-hidden="true"><div class="modal-card"><button class="close" id="adminClose">×</button><p class="eyebrow">RESTRICTED AREA</p><h2>Admin Login</h2><p class="small">This is a visual starter only. Secure login must be connected to a backend before publishing.</p>
-<form id="loginForm"><label>Admin email<input type="email" required placeholder="admin@example.com"></label><label>Password<input type="password" required placeholder="Password"></label><button class="primary full" type="submit">Continue</button></form><p id="loginMsg" class="small"></p></div></div>
-<script src="app.js"></script>
+<main id="account" class="hidden">
+ <div class="section-title"><h2>Member Account</h2><button class="btn ghost" onclick="logout()">Logout</button></div>
+ <div class="panel"><h3>Register / Sign in (demo)</h3><input id="userName" placeholder="Your name"><input id="userEmail" type="email" placeholder="Email address"><button class="btn primary" onclick="login()">Continue</button><p class="muted" id="userStatus">Sign in to see your demo membership status.</p></div>
+ <div class="panel" style="margin-top:14px"><h3>Your Membership</h3><div id="membershipInfo" class="muted">No active membership in this demo.</div></div>
+ <div class="panel" style="margin-top:14px"><h3>Members Area</h3><div id="memberPosts"><p class="muted">Sign in and activate a demo plan to preview member posts.</p></div></div>
+</main>
+<main id="admin" class="hidden">
+ <div class="section-title"><h2>Admin Dashboard</h2><span class="pill">LOCAL DEMO ONLY</span></div>
+ <div class="notice">Demo admin controls are stored only in this browser. They are not secure and do not sync across users or devices. A production admin panel needs a protected server and database.</div>
+ <div class="grid" style="margin-top:14px">
+  <div class="panel"><h3>Content Manager</h3><input id="postTitle" placeholder="Post title"><textarea id="postBody" placeholder="Write an update"></textarea><select id="postAccess"><option value="public">Public post</option><option value="member">Members only</option></select><button class="btn primary" onclick="addPost()">Publish Post</button></div>
+  <div class="panel"><h3>Payment Settings</h3><label class="muted">UPI ID (shown to members)</label><input id="upi" placeholder="yourname@upi"><button class="btn" onclick="saveUPI()">Save UPI ID</button><p class="muted" id="upiStatus"></p><div class="notice">Payment verification is manual in this demo. Do not mark a payment successful without checking your bank/UPI app.</div></div>
+  <div class="panel"><h3>Member Controls</h3><p class="muted">Demo membership can be activated on the Account page. Real member management requires backend authentication.</p><button class="btn ghost" onclick="resetDemo()">Reset demo data</button></div>
+ </div>
+ <div class="section-title"><h2>Published Posts</h2></div><div class="panel" id="adminPosts"><p class="muted">No posts yet.</p></div>
+</main>
+<div id="paymentModal" class="panel hidden" style="position:fixed;z-index:5;left:5%;right:5%;bottom:20px;max-width:600px;margin:auto;box-shadow:0 0 0 9999px #000b">
+ <div class="section-title"><h2>Membership Request</h2><button class="btn ghost" onclick="closePay()">Close</button></div><p id="paymentText"></p><p class="muted" id="upiDisplay">UPI ID not set by admin yet.</p><button class="btn primary" onclick="activateDemo()">Activate demo plan</button><p class="muted">Demo only: this button does not collect or verify money.</p>
+</div>
+<footer>© Royal Vee Games • Play • Win • Enjoy</footer>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+let selected=null;
+const read=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};
+const write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+function show(id){['home','account','admin'].forEach(x=>$(x).classList.toggle('hidden',x!==id));window.scrollTo(0,0);render()}
+function choosePlan(name,price){selected={name,price};$('paymentText').textContent=`${name} plan — ₹${price} for 30 days.`;$('upiDisplay').textContent='UPI ID: '+(localStorage.getItem('rv_upi')||'Not set by admin');$('paymentModal').classList.remove('hidden')}
+function closePay(){$('paymentModal').classList.add('hidden')}
+function activateDemo(){if(!selected){closePay();return}write('rv_membership',{...selected,expires:Date.now()+30*86400000,demo:true});closePay();show('account');$('membershipInfo').textContent='Demo '+selected.name+' plan active for 30 days.'}
+function login(){let name=$('userName').value.trim(),email=$('userEmail').value.trim();if(!name||!email){alert('Enter name and email');return}write('rv_user',{name,email});render()}
+function logout(){localStorage.removeItem('rv_user');render()}
+function addPost(){let title=$('postTitle').value.trim(),body=$('postBody').value.trim();if(!title||!body){alert('Enter title and post');return}let posts=read('rv_posts',[]);posts.unshift({id:Date.now(),title,body,access:$('postAccess').value});write('rv_posts',posts);$('postTitle').value='';$('postBody').value='';render()}
+function deletePost(id){write('rv_posts',read('rv_posts',[]).filter(p=>p.id!==id));render()}
+function saveUPI(){let v=$('upi').value.trim();localStorage.setItem('rv_upi',v);$('upiStatus').textContent='Saved in this browser only.'}
+function resetDemo(){if(confirm('Reset all Royal Vee demo data on this device?')){['rv_posts','rv_user','rv_membership','rv_upi'].forEach(k=>localStorage.removeItem(k));render()}}
+function card(p,admin=false){return `<div class="post"><h4>${escapeHtml(p.title)}</h4><p>${escapeHtml(p.body)}</p><span class="pill">${p.access==='member'?'MEMBERS':'PUBLIC'}</span>${admin?` <button class="btn danger" onclick="deletePost(${p.id})">Delete</button>`:''}</div>`}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){
+let posts=read('rv_posts',[]),user=read('rv_user',null),mem=read('rv_membership',null),active=mem&&mem.expires>Date.now();
+$('publicPosts').innerHTML=posts.filter(p=>p.access==='public').map(p=>card(p)).join('')||'<p class="muted">No public updates yet.</p>';
+$('adminPosts').innerHTML=posts.map(p=>card(p,true)).join('')||'<p class="muted">No posts yet.</p>';
+$('userStatus').textContent=user?`Signed in as ${user.name} (${user.email})`:'Sign in to see your demo membership status.';
+$('membershipInfo').textContent=active?`${mem.name} demo plan active until ${new Date(mem.expires).toLocaleDateString()}.`:'No active membership in this demo.';
+$('memberPosts').innerHTML=active?(posts.filter(p=>p.access==='member').map(p=>card(p)).join('')||'<p class="muted">No member posts yet.</p>'):'Activate a demo plan to preview members-only posts.';
+if(user){$('userName').value=user.name;$('userEmail').value=user.email}
+if(localStorage.getItem('rv_upi'))$('upi').value=localStorage.getItem('rv_upi');
+}
+render();
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+</script>
 </body></html>

@@ -1,13 +1,17 @@
-
 {
-  "id": "./",
   "name": "Royal Vee Games",
   "short_name": "Royal Vee",
-  "description": "Welcome to Royal Vee Games Official App",
   "start_url": "./",
-  "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#ffffff",
-  "theme_color": "#6a00ff"
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "description": "Royal Vee Games \u2014 Play \u2022 Win \u2022 Enjoy",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
