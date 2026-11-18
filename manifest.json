@@ -3,7 +3,7 @@
   "id": "./",
   "name": "Royal Vee Games",
   "short_name": "Royal Vee",
-  "description": "Royal Vee Games — Play Win Enjoy",
+  "description": "Royal Vee Games - Play Win Enjoy",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -12,7 +12,7 @@
   "theme_color": "#080808",
   "icons": [
     {
-      "src": "./icon-192.png",
+      "src": "./icon-192-1.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
